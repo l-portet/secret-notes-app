@@ -1,0 +1,79 @@
+@import './vars';
+@import 'typeface-rubik';
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Rubik', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.Page {
+  position: relative;
+  background-image: $gradient-content-bg;
+  min-width: 500px;
+  padding: 20px 40px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
+}
+
+h1 {
+  font-size: 2em;
+  letter-spacing: -.03em;
+  text-shadow: 0 2px 5px #11171E;
+}
+
+p {
+  font-size: 1.3em;
+  margin-top: -10px;
+}
+
+.Details {
+  display: block;
+  margin: 1.3em 0;
+  margin-top: 30px;
+}
+
+a {
+  color: $color-link;
+  text-decoration: none;
+
+  &:hover {
+    color: $color-link-hover;
+  }
+}
+
+label {
+  display: block;
+  font-weight: 500;
+  margin: 1.5em 0;
+}
+
+input {
+  display: block;
+  background: $color-bg-input;
+  outline: none;
+  border: 2px solid transparent;
+  font: inherit;
+  letter-spacing: .03em;
+  font-weight: 400;
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px 15px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  color: $color-text;
+
+  &::placeholder {
+    color: rgba(255, 255, 255, .4);
+  }
+
+  &:focus {
+    border: 2px solid $color-link;
+  }
+}
