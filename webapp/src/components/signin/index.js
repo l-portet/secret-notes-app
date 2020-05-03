@@ -7,16 +7,16 @@ export default function Signin() {
   const [password, setPassword] = useState('');
   const formRef = useRef();
 
-  function handleEmailChange(e) {
-    setEmail(e.target.value);
+  function handleEmailChange(event) {
+    setEmail(event.target.value);
   }
 
-  function handlePasswordChange(e) {
-    setPassword(e.target.value);
+  function handlePasswordChange(event) {
+    setPassword(event.target.value);
   }
 
-  function handleCtaButtonClick(e) {
-    e.preventDefault();
+  function handleCtaButtonClick(event) {
+    event.preventDefault();
     formRef.current.dispatchEvent(new Event('submit'));
   }
 
@@ -38,6 +38,7 @@ export default function Signin() {
               onChange={handleEmailChange}
               placeholder="johndoe@mail.com"
               autoComplete="email"
+              autoFocus
             />
           </label>
           <label>

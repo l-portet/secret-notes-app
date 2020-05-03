@@ -1,0 +1,14 @@
+.OnboardMessage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3em 0 5em 0;
+
+  img {
+    width: 50px;
+    margin-right: 20px;
+  }
+  p {
+    margin: 0;
+  }
+}
