@@ -9,7 +9,7 @@
     height: 100%;
     width: var(--progress-bar-fill-width);
     background-image: $gradient-primary-horizontal;
-    transition: width 0.2s ease-in-out;
+    transition: width 0.5s ease-in-out;
     animation: WidthInit 0.5s ease-in-out 1;
     overflow: hidden;
 
@@ -19,13 +19,15 @@
       left: 0px;
       width: 50px;
       height: 100px;
+      opacity: .2;
       background: linear-gradient(
         to right,
         rgba(255, 255, 255, 0),
-        rgba(255, 255, 255, 0.2)
+        rgba(255, 255, 255, 1),
+        rgba(255, 255, 255, 0)
       );
       transform: skewX(-30deg) translateX(-200%);
-      animation: Slide 1.7s ease-out infinite normal;
+      animation: Slide 1.7s ease-in-out infinite normal;
     }
   }
 }
@@ -34,6 +36,10 @@
   0% {
     left: 0px;
   }
+
+  20% {
+  }
+
   50% {
     left: calc(100% + 100px);
   }
@@ -44,9 +50,11 @@
 
 @keyframes WidthInit {
   0% {
+    opacity: 0;
     width: 0%;
   }
   100% {
+    opacity: 1;
     width: var(--progress-bar-fill-width);
   }
 }
