@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useHistory, Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import api from '../../api';
 import ProgressBar from '../common/ProgressBar';
 import StepEmail from './StepEmail';

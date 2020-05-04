@@ -7,6 +7,7 @@
 
 ## Webapp
 
+- Store API token in persistent storage
 - Validators on forms
 - Use smooth toast notifications
 - Alias 'src' in webapp (but it seems to need ejecting)
