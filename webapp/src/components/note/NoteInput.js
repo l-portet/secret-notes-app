@@ -11,15 +11,15 @@ export default function NoteInput(props) {
 
   async function handleNoteChange(event) {
     setNoteContent(event.target.value);
-    updateNote();
+    updateNote(event.target.value);
   }
 
-  const updateNote = debounce(async function() {
+  const updateNote = debounce(async function(note) {
     setChangesStatus('Saving...');
     try {
-      console.log('FETCH UPDATE')
-      console.log(noteContent)
-      await api.updateNote(noteContent);
+      console.log('FETCH UPDATE');
+      console.log(note);
+      await api.updateNote(note);
       setChangesStatus('Saved');
     } catch (e) {
       console.error(e);
