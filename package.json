@@ -1,0 +1,22 @@
+{
+  "name": "secret-notes-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "api:start": "npm start --prefix api",
+    "api:dev": "npm run dev --prefix api",
+    "webapp:start": "npm start --prefix webapp",
+    "webapp:build": "npm run build --prefix webapp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/l-portet/secret-notes-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/l-portet/secret-notes-app/issues"
+  },
+  "homepage": "https://github.com/l-portet/secret-notes-app#readme"
+}
