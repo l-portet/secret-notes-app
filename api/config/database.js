@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
-const mongoDB = `mongodb://${process.env.MONGO_HOST}/`;
+const mongoDB =
+  process.env.MONGODB_URI || `mongodb://${process.env.MONGO_HOST}/`;
 
 mongoose.connection.on(
   'error',
