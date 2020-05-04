@@ -3,6 +3,9 @@
 
 [Live demo](https://vigorous-snyder-ac499a.netlify.app/)
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8ccd279a-a08e-4ce1-b051-324b4ba3a7f3/deploy-status)](https://app.netlify.com/sites/vigorous-snyder-ac499a/deploys)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+
 ## Structure
 The repo's structure is pretty straightforward: The back-end is in `api` folder and the web front-end is in `webapp`.
 
