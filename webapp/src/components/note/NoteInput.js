@@ -17,12 +17,9 @@ export default function NoteInput(props) {
   const updateNote = debounce(async function(note) {
     setChangesStatus('Saving...');
     try {
-      console.log('FETCH UPDATE');
-      console.log(note);
       await api.updateNote(note);
       setChangesStatus('Saved');
     } catch (e) {
-      console.error(e);
       setChangesStatus('Error');
       window.alert('Oops! Unable to update note.');
     }
@@ -33,7 +30,6 @@ export default function NoteInput(props) {
       let result;
       try {
         result = await api.getNote();
-        console.log(result);
         setNoteContent(result.note);
         setChangesStatus('No changes');
       } catch (e) {
@@ -45,10 +41,6 @@ export default function NoteInput(props) {
     function redirectToHome() {
       history.push('/');
     }
-
-    console.log('note check');
-    console.log(api.token);
-    console.log(api.isLogged());
     if (!api.isLogged()) return redirectToHome();
     fetchNote();
   }, [history]);

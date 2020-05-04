@@ -5,7 +5,6 @@ import CtaButton from '../common/CtaButton';
 export default function StepEmail(props) {
   function onSubmit(event) {
     event.preventDefault();
-    console.log('submit');
     if (typeof props.onSubmit === 'function')
       props.onSubmit(event)
   }
