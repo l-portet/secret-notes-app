@@ -17,6 +17,8 @@ export default function NoteInput(props) {
   const updateNote = debounce(async function() {
     setChangesStatus('Saving...');
     try {
+      console.log('FETCH UPDATE')
+      console.log(noteContent)
       await api.updateNote(noteContent);
       setChangesStatus('Saved');
     } catch (e) {
