@@ -1,15 +1,15 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
 import CtaButton from '../common/CtaButton';
 import './StepEnd.scss';
 
 export default function StepEnd(props) {
-  const history = useHistory();
 
   function handleCtaButtonClick(event) {
     event.preventDefault();
-    history.push('/note');
+    if (typeof props.onSubmit === 'function')
+      props.onSubmit();
   }
+
   return (
     <>
       <div className="OnboardMessage">

@@ -1,66 +1,31 @@
-import React, { useState, useRef } from 'react';
-import { Link } from 'react-router-dom';
-import CtaButton from '../common/CtaButton';
+import React, { useState } from 'react';
+import { useHistory, Link } from 'react-router-dom';
+import SigninForm from './SigninForm';
+import api from '../../api';
 
 export default function Signin() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const formRef = useRef();
+  const history = useHistory();
+  const [loading, setLoading] = useState(false);
 
-  function handleEmailChange(event) {
-    setEmail(event.target.value);
-  }
-
-  function handlePasswordChange(event) {
-    setPassword(event.target.value);
-  }
-
-  function handleCtaButtonClick(event) {
-    event.preventDefault();
-    formRef.current.dispatchEvent(new Event('submit'));
-  }
-
-  function handleSubmit(e) {
-    console.log('SUBMIT');
-    e.preventDefault();
+  async function handleSubmit({ email, password }) {
+    setLoading(true);
+    try {
+      await api.signin({ email, password })
+      setLoading(false);
+      history.push('/note')
+    } catch (e) {
+      console.error(e)
+      // TEMP Replace by a smooth toast notification
+      window.alert('Oops! Unable to sign in, check your email or password.');
+      setLoading(false);
+    }
   }
 
   return (
     <div className="Page">
       <main>
         <h1>Sign in</h1>
-        <form onSubmit={handleSubmit} ref={formRef}>
-          <label>
-            Email
-            <input
-              type="text"
-              value={email}
-              onChange={handleEmailChange}
-              placeholder="johndoe@mail.com"
-              autoComplete="email"
-              autoFocus
-            />
-          </label>
-          <label>
-            Password
-            <input
-              type="password"
-              value={password}
-              onChange={handlePasswordChange}
-              placeholder="••••••••••••••"
-              autoComplete="current-password password"
-            />
-          </label>
-          {/*
-              This proxy input allows form to submit and emulate the
-              Link contained in CtaButton as submit action, have not find a
-              better solution in React, so far
-          */}
-          <input type="submit" value="" style={{ display: 'none' }} />
-          <CtaButton to="/note" onClick={handleCtaButtonClick}>
-            Continue
-          </CtaButton>
-        </form>
+        <SigninForm onSubmit={handleSubmit} loading={loading} />
         <span className="Details">
           Don't have an account? <Link to="/signup">Create one</Link>.
         </span>

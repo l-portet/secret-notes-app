@@ -26,6 +26,8 @@ const controller = {
     let { email, password } = req.body;
     let user, note;
 
+    console.log('CALLED HERE')
+
     if (!email || !password || !validators.password(password)) {
       let err = new Error('Incomplete request');
 

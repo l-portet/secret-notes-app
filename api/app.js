@@ -2,6 +2,7 @@ require('dotenv').config();
 
 // Import
 const express = require('express');
+const cors = require('cors');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
 const jwt = require('jsonwebtoken');
@@ -12,6 +13,7 @@ const routes = require('./routes');
 const app = express();
 
 app.set('secretKey', process.env.SECRET_KEY);
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(logger('dev'));
 
@@ -39,4 +41,4 @@ app.use(function(err, req, res, next) {
 });
 
 // Start and export for testing
-module.exports = app
+module.exports = app;

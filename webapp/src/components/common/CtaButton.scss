@@ -11,10 +11,21 @@
   letter-spacing: -.03em;
   padding: 10px 20px;
   text-shadow: 0 1px 3px rgba(0, 0, 0, .3);
-  transition: all .2s ease-in-out;
+  transition: transform .2s ease-in-out;
 
   &.animated {
     animation: Scale 1.3s ease-in-out infinite alternate;
+  }
+
+  &.loading {
+    background: $color-bg-loader;
+    display: flex;
+    justify-content: center;
+    pointer-events: none;
+    width: 70px;
+    &:hover {
+      transform: none;
+    }
   }
 
   &:hover {

@@ -1,6 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './CtaButton.scss';
+import ClipLoader from 'react-spinners/BeatLoader';
+
+const loaderStyle = {
+  css: `transform: translateY(2px);`,
+  size: 13
+};
 
 export default function CtaButton(props) {
   function handleClick(event) {
@@ -9,15 +15,28 @@ export default function CtaButton(props) {
 
   return (
     <Link
-      className={`CtaButton ${props.animated ? 'animated' : ''}`}
+      className={`
+        CtaButton
+        ${props.animated ? 'animated' : ''}
+        ${props.loading ? 'loading' : ''}
+      `}
       to={props.to}
       onClick={handleClick}
     >
-      {props.children}
+      {props.loading ? (
+        <ClipLoader
+          color="white"
+          css={loaderStyle.css}
+          size={loaderStyle.size}
+        />
+      ) : (
+        props.children
+      )}
     </Link>
   );
 }
 
 CtaButton.defaultProps = {
-  to: ''
-}
+  to: '',
+  loading: false
+};
