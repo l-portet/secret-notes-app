@@ -17,6 +17,8 @@ Don't forget to set the needed env vars (find them in each directory's `.env.sam
 ## Usage
 All commands are executed at the root of the project (find their equivalent in each `package.json` if you want an execution in a specific folder).
 
+> Don't forget where your `.env` files are located. You might want to place them in the directory where you run your process.
+
 ### Webapp
 ```bash
 npm run webapp:build
