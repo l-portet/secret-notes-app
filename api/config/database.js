@@ -3,6 +3,9 @@ const mongoose = require('mongoose');
 const mongoDB =
   process.env.MONGODB_URI || `mongodb://${process.env.MONGO_HOST}/`;
 
+mongoose.connection.once('open', () => {
+  console.log(`Connected to DB. (${mongoDB})`)
+})
 mongoose.connection.on(
   'error',
   console.error.bind(console, 'MongoDB connection error:')
