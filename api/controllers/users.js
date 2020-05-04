@@ -26,8 +26,6 @@ const controller = {
     let { email, password } = req.body;
     let user, note;
 
-    console.log('CALLED HERE');
-
     if (!email || !password || !validators.password(password)) {
       let err = new Error('Incomplete request');
 
@@ -53,6 +51,7 @@ const controller = {
   async authenticate(req, res, next) {
     let { email, password } = req.body;
     let user, token;
+    console.error('SIGNIN CALLED')
     const secret = req.app.get('secretKey');
 
     if (!email || !password) {
@@ -77,6 +76,9 @@ const controller = {
       });
     } catch (e) {
       let err = new Error('Failed to authenticate user.');
+
+      console.error('ERR')
+      console.error(e)
 
       err.status = 401;
       return next(err);
