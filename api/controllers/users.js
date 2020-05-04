@@ -26,7 +26,7 @@ const controller = {
     let { email, password } = req.body;
     let user, note;
 
-    console.log('CALLED HERE')
+    console.log('CALLED HERE');
 
     if (!email || !password || !validators.password(password)) {
       let err = new Error('Incomplete request');
@@ -66,21 +66,21 @@ const controller = {
       let isMatch = await user.comparePassword(password);
 
       if (!user || !isMatch) throw new Error('Invalid password.');
+
+      token = jwt.sign({ id: user.noteId }, secret, {
+        expiresIn: '2h'
+      });
+      res.send({
+        status: 'success',
+        message: 'User authenticated successfully.',
+        token
+      });
     } catch (e) {
       let err = new Error('Failed to authenticate user.');
 
       err.status = 401;
       return next(err);
     }
-
-    token = jwt.sign({ id: user.noteId }, secret, {
-      expiresIn: '2h'
-    });
-    res.send({
-      status: 'success',
-      message: 'User authenticated successfully.',
-      token
-    });
   }
 };
 
