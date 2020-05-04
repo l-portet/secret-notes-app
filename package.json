@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "api:install": "npm install --prefix api",
     "api:start": "npm start --prefix api",
     "api:dev": "npm run dev --prefix api",
     "webapp:start": "npm start --prefix webapp",
