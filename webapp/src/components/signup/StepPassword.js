@@ -32,7 +32,7 @@ export default function StepEmail(props) {
         </CtaButton>
       </form>
       <span className="Details">
-        Missed something ?{' '}
+        Missed something ?
         <Link onClick={handleGoBack} to="/signup">
           Go back
         </Link>
