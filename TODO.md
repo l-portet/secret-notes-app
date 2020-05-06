@@ -14,3 +14,4 @@
 - Animate button loading
 - If more features expected, set a state management logic (redux?)
 - Use before route enter function to check if should redirect user based on auth
+- Set textarea disabled while fetching data
