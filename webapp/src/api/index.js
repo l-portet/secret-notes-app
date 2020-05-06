@@ -28,6 +28,7 @@ class ApiProvider {
 
   deleteToken() {
     this.token = null;
+    this.$http.defaults.headers.common['x-access-token'] = null;
   }
 
   isLogged() {
