@@ -1,9 +1,9 @@
 # Secret notes app
 🔒📝 Secret notes app built with React and Express
 
-[Live demo](https://vigorous-snyder-ac499a.netlify.app/)
+[Live demo](https://secret-notes-app.netlify.app/)
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/8ccd279a-a08e-4ce1-b051-324b4ba3a7f3/deploy-status)](https://app.netlify.com/sites/vigorous-snyder-ac499a/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8ccd279a-a08e-4ce1-b051-324b4ba3a7f3/deploy-status)](https://app.netlify.com/sites/secret-notes-app/deploys)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 ## Structure
